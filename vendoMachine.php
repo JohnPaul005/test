@@ -38,7 +38,7 @@
                     // can concatinate the $key and value
                     foreach($arrDrinks as $key => $value){
                         echo '<input type="checkbox" name="checkproduct[]" id="'.$key.'" value="'.$key.'">';
-                        echo '<label for="'.$key.'">'.$key.' - P'.$value.')</label><br>';
+                        echo '<label for="'.$key.'">'.$key.' - ₱ '.$value.')</label><br>';
                     }
                 ?>
             </fieldset>
@@ -54,7 +54,7 @@
                     </select>
                 </label>
 
-                <label for="quantity">Quantity: </label>
+                <label for="quantity">Quantity : </label>
                 <input type="number" min=0 value=0 name="quantity">
 
                 <button type="submit" name="btnprocess">Check Out</button>
@@ -76,16 +76,16 @@
                 $totalAmount = 0;
                 $totalItems = count($drinks) * $qty;
 
-                echo '<h3>Purchase Sumarry: </h3>';
+                echo '<h3>Purchase Sumarry : </h3>';
                 echo '<ul>';
                 foreach($drinks as $productname){
                     $tpdrink = ($arrDrinks[$productname] + $arrSize[$size]) * $qty;
                     $totalAmount += $tpdrink;
 
                     if($qty == 1)
-                        echo '<li>'." $qty peice of $size $productname amounting to P$tpdrink".'</li>';
+                        echo '<li>'." $qty peice of $size $productname amounting to ₱ $tpdrink".'</li>';
                     else
-                        echo '<li>'." $qty peices of $size $productname amounting to P$tpdrink".'</li>';
+                        echo '<li>'." $qty peices of $size $productname amounting to ₱ $tpdrink".'</li>';
                 }
                 echo '</ul>';
 
